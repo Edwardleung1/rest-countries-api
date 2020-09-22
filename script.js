@@ -49,10 +49,30 @@ function displayCountries(countries) {
     // show modal on country click
     countryEl.addEventListener('click', () => {
       modal.style.display = 'flex';
+      showCountryDetails(country);
     });
 
     countriesEl.appendChild(countryEl);
   });
+}
+
+// show country details for modal
+function showCountryDetails(country) {
+  modal.querySelector('.modal-body').innerHTML = `
+    <h2 class="country-name">${country.name}</h2>
+    <p>
+      <strong>Population:</strong>
+      ${country.population}
+    </p>
+    <p class="country-region">
+      <strong>Region:</strong>
+      ${country.region}
+    </p>
+    <p>
+      <strong>Capital:</strong>
+      ${country.capital}
+    </p>
+  `;
 }
 
 // toggle btn theme
