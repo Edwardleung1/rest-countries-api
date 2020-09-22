@@ -2,6 +2,7 @@
 const countriesEl = document.getElementById('countries');
 const toggleBtn = document.getElementById('toggle');
 const filterBtn = document.getElementById('filter');
+const searchEl = document.getElementById('search');
 
 getCountries();
 
@@ -24,17 +25,20 @@ function displayCountries(countries) {
     countryEl.innerHTML = `
       <div>
         <img src=${country.flag} alt=${country.name} />
-      <div/>
+      </div>
       <div class='card-body'>
-        <h2>${country.name}</h2>
+        <h2 class="country-name">${country.name}</h2>
         <p>
-          <strong>Population:</strong> ${country.population}
+          <strong>Population:</strong>
+          ${country.population}
         </p>
         <p>
-          <strong>Region:</strong> ${country.region}
+          <strong>Region:</strong> 
+          ${country.region}
         </p>
         <p>
-          <strong>Capital:</strong> ${country.capital}
+          <strong>Capital:</strong> 
+          ${country.capital}
         </p>
       </div>
   `;
@@ -51,4 +55,20 @@ toggleBtn.addEventListener('click', () => {
 // filter dropdown btn
 filterBtn.addEventListener('click', () => {
   filterBtn.classList.toggle('open');
+});
+
+// get input value on searchBar
+searchEl.addEventListener('input', e => {
+  const val = e.target.value;
+  // get all the country name
+  const countryName = document.querySelectorAll('.country-name');
+
+  // hide or show country
+  countryName.forEach(name => {
+    if (name.innerText.toLowerCase().includes(val.toLowerCase())) {
+      name.parentElement.parentElement.style.display = 'block';
+    } else {
+      name.parentElement.parentElement.style.display = 'none';
+    }
+  });
 });
