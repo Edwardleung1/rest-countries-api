@@ -148,7 +148,7 @@ body.dark .btn-toggle .far {
 }
 
 /* Modal Styling */
-.modal-container {
+.modal {
   background-color: var(--background-el);
   display: none;
   align-items: center;
@@ -161,7 +161,7 @@ body.dark .btn-toggle .far {
   z-index: 10;
 }
 
-.modal-container img {
+.modal img {
   max-width: 300px;
 }
 

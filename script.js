@@ -4,6 +4,8 @@ const toggleBtn = document.getElementById('toggle');
 const filterBtn = document.getElementById('filter');
 const regionFilters = filterBtn.querySelectorAll('li');
 const searchEl = document.getElementById('search');
+const modal = document.getElementById('modal');
+const closeBtn = document.getElementById('close');
 
 getCountries();
 
@@ -44,6 +46,11 @@ function displayCountries(countries) {
       </div>
   `;
 
+    // show modal on country click
+    countryEl.addEventListener('click', () => {
+      modal.style.display = 'flex';
+    });
+
     countriesEl.appendChild(countryEl);
   });
 }
@@ -56,6 +63,11 @@ toggleBtn.addEventListener('click', () => {
 // filter dropdown btn
 filterBtn.addEventListener('click', () => {
   filterBtn.classList.toggle('open');
+});
+
+// close the modal
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
 });
 
 // get input value on searchBar
