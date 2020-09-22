@@ -77,14 +77,14 @@ searchEl.addEventListener('input', e => {
 // region filters on dropdown
 regionFilters.forEach(filter => {
   filter.addEventListener('click', () => {
+    // check if value is all
+    const val = filter.innerText;
     // get all the country region
     const countryRegion = document.querySelectorAll('.country-region');
 
     // hide or show region
     countryRegion.forEach(region => {
-      if (
-        region.innerText.toLowerCase().includes(filter.innerText.toLowerCase())
-      ) {
+      if (region.innerText.includes(val) || val === 'All') {
         // .card -> .card-body -> .country-region
         region.parentElement.parentElement.style.display = 'block';
       } else {
