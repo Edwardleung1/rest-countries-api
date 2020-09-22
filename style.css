@@ -36,6 +36,7 @@ img {
   justify-content: space-between;
   max-width: 1440px;
   padding: 30px;
+  position: relative;
 }
 
 h1 {
@@ -144,4 +145,34 @@ body.dark .btn-toggle .far {
 
 .container.countries {
   justify-content: center;
+}
+
+/* Modal Styling */
+.modal-container {
+  background-color: var(--background-el);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+.modal-container img {
+  max-width: 300px;
+}
+
+.modal-body {
+  padding: 30px;
+}
+
+.btn-close {
+  border: none;
+  font-size: 20px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
