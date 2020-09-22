@@ -30,7 +30,7 @@ function displayCountries(countries) {
         <img src=${country.flag} alt=${country.name} />
       </div>
       <div class='card-body'>
-        <h2 class="country-name">${country.name}</h2>
+        <h3 class="country-name">${country.name}</h3>
         <p>
           <strong>Population:</strong>
           ${country.population}

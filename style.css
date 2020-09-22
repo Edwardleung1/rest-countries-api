@@ -6,16 +6,17 @@
 
 :root {
   --background-el: hsl(0, 0%, 100%);
+  --body: hsl(0, 0%, 98%);
 }
 
 body {
-  background-color: hsl(0, 0%, 98%);
+  background-color: var(--body);
   font-family: 'Nunito Sans', sans-serif;
   margin: 0;
 }
 
 body.dark {
-  background-color: hsl(207, 26%, 17%);
+  --body: hsl(207, 26%, 17%);
   color: hsl(0, 0%, 100%);
   --background-el: hsl(209, 23%, 22%);
 }
@@ -134,14 +135,21 @@ body.dark .btn-toggle .far {
   cursor: pointer;
   overflow: hidden;
   margin: 40px;
-  width: 250px;
+  max-width: 100%;
+  width: 280px;
+}
+
+.card img {
+  object-fit: cover;
+  height: 200%;
+  width: 100%;
 }
 
 .card-body {
   padding: 30px;
 }
 
-.card-body h2 {
+.card-body h3 {
   margin-top: 0;
 }
 
@@ -152,7 +160,7 @@ body.dark .btn-toggle .far {
 
 /* Modal Styling */
 .modal {
-  background-color: var(--background-el);
+  background-color: var(--body);
   display: none;
   align-items: center;
   justify-content: center;
@@ -162,6 +170,11 @@ body.dark .btn-toggle .far {
   right: 0;
   bottom: 0;
   z-index: 10;
+}
+
+.modal .container {
+  background-color: var(--background-el);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12);
 }
 
 .modal img {
@@ -174,6 +187,7 @@ body.dark .btn-toggle .far {
 
 .btn-close {
   background-color: var(--background-el);
+  color: inherit;
   border: none;
   cursor: pointer;
   font-size: 20px;
