@@ -35,6 +35,7 @@ img {
   align-items: center;
   justify-content: space-between;
   max-width: 1440px;
+  margin: auto;
   padding: 30px;
   position: relative;
 }
@@ -114,6 +115,7 @@ body.dark .btn-toggle .far {
   left: 0;
   list-style-type: none;
   width: 100%;
+  z-index: 9;
 }
 
 .dropdown.open ul {
@@ -132,7 +134,7 @@ body.dark .btn-toggle .far {
   cursor: pointer;
   overflow: hidden;
   margin: 40px;
-  width: 300px;
+  width: 250px;
 }
 
 .card-body {
@@ -144,6 +146,7 @@ body.dark .btn-toggle .far {
 }
 
 .container.countries {
+  margin-top: -40px;
   justify-content: center;
 }
 
@@ -170,6 +173,7 @@ body.dark .btn-toggle .far {
 }
 
 .btn-close {
+  background-color: var(--background-el);
   border: none;
   cursor: pointer;
   font-size: 20px;

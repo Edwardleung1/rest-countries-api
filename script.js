@@ -58,19 +58,46 @@ function displayCountries(countries) {
 
 // show country details for modal
 function showCountryDetails(country) {
-  modal.querySelector('.modal-body').innerHTML = `
-    <h2 class="country-name">${country.name}</h2>
+  const modalBody = modal.querySelector('.modal-body');
+  const modalImg = modal.querySelector('img');
+
+  // flag
+  modalImg.src = country.flag;
+
+  // country info
+  modalBody.innerHTML = `
+    <h2>${country.name}</h2>
+    <p>
+      <strong>Native Name:</strong>
+      ${country.nativeName}
+    </p>
     <p>
       <strong>Population:</strong>
       ${country.population}
     </p>
-    <p class="country-region">
+    <p>
       <strong>Region:</strong>
       ${country.region}
     </p>
     <p>
+      <strong>Sub Region:</strong>
+      ${country.subregion}
+    </p>
+    <p>
       <strong>Capital:</strong>
       ${country.capital}
+    </p>
+    <p>
+      <strong>Top Level Domain:</strong> 
+      ${country.topLevelDomain[0]}
+    </p>
+    <p>
+      <strong>Currencies:</strong> 
+      ${country.currencies.map(currency => currency.code)}
+    </p>
+    <p>
+      <strong>Languages:</strong> 
+      ${country.languages.map(language => language.name)}
     </p>
   `;
 }
