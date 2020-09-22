@@ -2,6 +2,7 @@
 const countriesEl = document.getElementById('countries');
 const toggleBtn = document.getElementById('toggle');
 const filterBtn = document.getElementById('filter');
+const regionFilters = filterBtn.querySelectorAll('li');
 const searchEl = document.getElementById('search');
 
 getCountries();
@@ -32,7 +33,7 @@ function displayCountries(countries) {
           <strong>Population:</strong>
           ${country.population}
         </p>
-        <p>
+        <p class="country-region">
           <strong>Region:</strong> 
           ${country.region}
         </p>
@@ -70,5 +71,25 @@ searchEl.addEventListener('input', e => {
     } else {
       name.parentElement.parentElement.style.display = 'none';
     }
+  });
+});
+
+// region filters on dropdown
+regionFilters.forEach(filter => {
+  filter.addEventListener('click', () => {
+    // get all the country region
+    const countryRegion = document.querySelectorAll('.country-region');
+
+    // hide or show region
+    countryRegion.forEach(region => {
+      if (
+        region.innerText.toLowerCase().includes(filter.innerText.toLowerCase())
+      ) {
+        // .card -> .card-body -> .country-region
+        region.parentElement.parentElement.style.display = 'block';
+      } else {
+        region.parentElement.parentElement.style.display = 'none';
+      }
+    });
   });
 });
